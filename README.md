@@ -18,8 +18,7 @@ Nginx auth_request 自定义登录
   
   配置 nginx 代理，添加配置如下：
   
-`
-  server {
+`  server {
     listen 20000;
     server_name localhost;
 
@@ -44,7 +43,6 @@ Nginx auth_request 自定义登录
         error_page 401 = @error401;
         proxy_pass http://192.168.1.132:20001;
     }
-  }
-`
+  }`
 
   这样，只要访问 `http://192.168.1.132:20000/` 时就会请求 /auth 进行验证，如果登录则代理至 `http://192.168.1.132:20001` ；否则会跳转到 login.html 页面
